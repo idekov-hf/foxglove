@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "html",
+    "javascript"
+  ],
+  "json.format.enable": true,
+  "json.format.keepLines": true,
+  "json.validate.enable": true,
+  "lit-plugin.strict": true
+}

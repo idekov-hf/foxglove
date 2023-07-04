@@ -526,10 +526,6 @@ video {
   position: absolute;
 }
 
-.top-0 {
-  top: 0px;
-}
-
 .left-0 {
   left: 0px;
 }
@@ -552,108 +548,28 @@ video {
   margin-bottom: 2.5rem;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
+.mb-5 {
   margin-bottom: 1.25rem;
-}
-
-.my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mt-9 {
-  margin-top: 2.25rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
-}
-
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mr-5 {
-  margin-right: 1.25rem;
-}
-
-.mr-6 {
-  margin-right: 1.5rem;
 }
 
 .mr-10 {
   margin-right: 2.5rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
-.mt-0 {
-  margin-top: 0px;
-}
-
-.mt-32 {
-  margin-top: 8rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .w-1\/2 {
   width: 50%;
 }
 
-.w-96 {
-  width: 24rem;
-}
-
-.w-\[90px\] {
-  width: 90px;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
-}
-
-.border {
-  border-width: 1px;
 }
 
 .bg-fg-white {
@@ -661,37 +577,8 @@ video {
   background-color: rgb(238 230 212 / var(--tw-bg-opacity));
 }
 
-.bg-fg-orange {
-  --tw-bg-opacity: 1;
-  background-color: rgb(221 110 57 / var(--tw-bg-opacity));
-}
-
-.pt-16 {
-  padding-top: 4rem;
-}
-
 .text-center {
   text-align: center;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
-}
-
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
 }
 
 .text-7xl {
@@ -707,22 +594,4 @@ video {
 .text-fg-purple {
   --tw-text-opacity: 1;
   color: rgb(146 60 141 / var(--tw-text-opacity));
-}
-
-@media (min-width: 768px) {
-  .md\:left-1\/4 {
-    left: 25%;
-  }
-
-  .md\:mt-10 {
-    margin-top: 2.5rem;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
-  }
-
-  .md\:pt-16 {
-    padding-top: 4rem;
-  }
 }
