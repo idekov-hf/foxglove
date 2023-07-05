@@ -32,7 +32,7 @@ export default {
     })
   ],
   output: {
-    dir: 'build'
+    dir: 'docs'
   },
   preserveEntrySignatures: 'strict'
 
