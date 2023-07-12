@@ -6,7 +6,7 @@ export const styles = css`
     overflow: hidden;
     position: relative;
     /* Defaults */
-    width: 100vw;
+    width: 100%;
     border-radius: 4px;
     background: gainsboro;
     cursor: pointer;
