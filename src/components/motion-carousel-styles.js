@@ -5,7 +5,6 @@ export const styles = css`
     display: inline-block;
     overflow: hidden;
     position: relative;
-    /* Defaults */
     width: 100%;
     border-radius: 4px;
     background: gainsboro;
@@ -16,6 +15,10 @@ export const styles = css`
     position: relative;
     height: 100%;
     width: 100%;
+  }
+
+  .selected {
+    top: -100%;
   }
 
   ::slotted(*) {

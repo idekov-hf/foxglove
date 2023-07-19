@@ -1,4 +1,6 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, noChange } from 'lit'
+import { animate } from '@lit-labs/motion'
+import { styleMap } from 'lit/directives/style-map.js'
 import { styles } from './motion-carousel-styles.js'
 
 export class MotionCarousel extends LitElement {
@@ -11,8 +13,20 @@ export class MotionCarousel extends LitElement {
   constructor () {
     super()
     this.selected = 0
+    setInterval(() => { this.renderRoot.firstElementChild.click() }, 4000)
   }
 
+  get selectedSlot () {
+    return (this.__selectedSlot ??=
+      this.renderRoot?.querySelector('slot[name="selected"]') ?? null)
+  }
+
+  get previousSlot () {
+    return (this.__previousSlot ??=
+      this.renderRoot?.querySelector('slot[name="previous"]') ?? null)
+  }
+
+  left = 0
   selectedInternal = 0
 
   get maxSelected () {
@@ -24,14 +38,59 @@ export class MotionCarousel extends LitElement {
   }
 
   render () {
-    if (this.hasValidSelected()) {
-      this.selectedInternal = this.selected
-    }
+    const p = this.selectedInternal
+    const s = (this.selectedInternal = this.hasValidSelected()
+      ? this.selected
+      : this.selectedInternal)
+    const shouldMove = this.hasUpdated && s !== p
+    const atStart = p === 0
+    const toStart = s === 0
+    const atEnd = p === this.maxSelected
+    const toEnd = s === this.maxSelected
+    const shouldAdvance =
+      shouldMove && (atEnd ? toStart : atStart ? !toEnd : s > p)
+    const delta = (shouldMove ? Number(shouldAdvance) || -1 : 0) * 100
+    this.left -= delta
+    const animateLeft = `${this.left}%`
+    const selectedLeft = `${-this.left}%`
+    const previousLeft = `${-this.left - delta}%`
     return html`
-      <div class="fit" @click=${this.clickHandler}>
-        <slot name="selected"></slot>
+      <div class="fit"
+        ${animate()}
+        @click=${this.clickHandler}
+        style=${styleMap({ left: animateLeft })}>
+        <div class="fit" style=${
+          shouldMove ? styleMap({ left: previousLeft }) : noChange
+        }>
+          <slot name="previous"></slot>
+        </div>
+        <div class="fit selected" style=${
+          shouldMove ? styleMap({ left: selectedLeft }) : noChange
+        }>
+          <slot name="selected"></slot>
+        </div>
       </div>
     `
+  }
+
+  previous = -1
+  async updated (changedProperties) {
+    if (
+      (changedProperties.has('selected') || this.previous === -1) &&
+      this.hasValidSelected()
+    ) {
+      this.updateSlots()
+      this.previous = this.selected
+    }
+  }
+
+  updateSlots () {
+    // unset old slot state
+    this.selectedSlot.assignedElements()[0]?.removeAttribute('slot')
+    this.previousSlot.assignedElements()[0]?.removeAttribute('slot')
+    // set slots
+    this.children[this.previous]?.setAttribute('slot', 'previous')
+    this.children[this.selected]?.setAttribute('slot', 'selected')
   }
 
   clickHandler (e) {
@@ -44,20 +103,5 @@ export class MotionCarousel extends LitElement {
     })
     this.dispatchEvent(change)
   }
-
-  previous = 0
-  updated (changedProperties) {
-    console.log(changedProperties)
-    if (changedProperties.has('selected') && this.hasValidSelected()) {
-      this.updateSlots()
-      this.previous = this.selected
-    }
-  }
-
-  updateSlots () {
-    this.children[this.previous]?.removeAttribute('slot')
-    this.children[this.selected]?.setAttribute('slot', 'selected')
-  }
 }
-
 customElements.define('motion-carousel', MotionCarousel)
