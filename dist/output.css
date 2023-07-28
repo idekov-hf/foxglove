@@ -564,42 +564,6 @@ video {
   margin-top: 1rem;
 }
 
-.h-\[100vh\] {
-  height: 100vh;
-}
-
-.h-\[inherit\] {
-  height: inherit;
-}
-
-.h-\[290\] {
-  height: 290;
-}
-
-.h-\[290px\] {
-  height: 290px;
-}
-
-.h-\[calc\(290px\)\] {
-  height: calc(290px);
-}
-
-.h-\[calc\(290px-100px\)\] {
-  height: calc(290px - 100px);
-}
-
-.h-\[30bh\] {
-  height: 30bh;
-}
-
-.h-\[30vh\] {
-  height: 30vh;
-}
-
-.h-\[40vh\] {
-  height: 40vh;
-}
-
 .h-\[28vh\] {
   height: 28vh;
 }
@@ -610,10 +574,6 @@ video {
 
 .w-\[100\%\] {
   width: 100%;
-}
-
-.w-\[100vh\] {
-  width: 100vh;
 }
 
 .bg-fg-white {
@@ -640,6 +600,16 @@ video {
   line-height: 1.75rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-fg-orange {
   --tw-text-opacity: 1;
   color: rgb(221 110 57 / var(--tw-text-opacity));
@@ -651,74 +621,18 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:h-\[100vh\] {
-    height: 100vh;
-  }
-
-  .sm\:h-\[400px\] {
-    height: 400px;
-  }
-
-  .sm\:h-\[50vh\] {
-    height: 50vh;
-  }
-
-  .sm\:h-\[40vh\] {
-    height: 40vh;
-  }
-
-  .sm\:h-\[45vh\] {
-    height: 45vh;
-  }
-
-  .sm\:h-\[42vh\] {
-    height: 42vh;
-  }
-
-  .sm\:h-\[44vh\] {
-    height: 44vh;
-  }
-
   .sm\:h-\[43vh\] {
     height: 43vh;
   }
 }
 
 @media (min-width: 768px) {
-  .md\:h-\[50vh\] {
-    height: 50vh;
-  }
-
-  .md\:h-\[60vh\] {
-    height: 60vh;
-  }
-
-  .md\:h-\[55vh\] {
-    height: 55vh;
-  }
-
-  .md\:h-\[53vh\] {
-    height: 53vh;
-  }
-
-  .md\:h-\[52vh\] {
-    height: 52vh;
-  }
-
   .md\:h-\[51vh\] {
     height: 51vh;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:h-\[100vh\] {
-    height: 100vh;
-  }
-
-  .lg\:h-\[60vh\] {
-    height: 60vh;
-  }
-
   .lg\:h-\[70vh\] {
     height: 70vh;
   }
@@ -726,21 +640,14 @@ video {
   .lg\:w-\[1000px\] {
     width: 1000px;
   }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 @media (min-width: 1280px) {
-  .xl\:h-\[100vh\] {
-    height: 100vh;
-  }
-
-  .xl\:h-\[80vh\] {
-    height: 80vh;
-  }
-
-  .xl\:h-\[90vh\] {
-    height: 90vh;
-  }
-
   .xl\:h-\[85vh\] {
     height: 85vh;
   }
