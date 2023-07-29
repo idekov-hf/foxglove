@@ -6,10 +6,9 @@ export default {
       colors: {
         'fg-white': '#EEE6D4',
         'fg-orange': '#DD6E39',
-        'fg-purple': '#923C8D',
+        'fg-purple': '#923C8D'
       }
-    },
+    }
   },
-  plugins: [],
+  plugins: []
 }
-

@@ -13,7 +13,11 @@ export class MotionCarousel extends LitElement {
   constructor () {
     super()
     this.selected = 0
-    setInterval(() => { this.renderRoot.firstElementChild.click() }, 4000)
+    setInterval(() => {
+      this.renderRoot.firstElementChild.click()
+      // const height = this.selectedSlot.assignedElements()[0].clientHeight
+      // this.renderRoot.host.style.height = height
+    }, 4000)
   }
 
   get selectedSlot () {

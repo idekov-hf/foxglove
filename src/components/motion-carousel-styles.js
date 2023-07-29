@@ -7,8 +7,8 @@ export const styles = css`
     position: relative;
     width: 100%;
     border-radius: 4px;
-    background: gainsboro;
     cursor: pointer;
+    background-color: '#EEE6D4';
   }
 
   .fit {
